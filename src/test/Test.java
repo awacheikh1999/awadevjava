@@ -9,14 +9,14 @@ public class Test {
 	public static void main(String[] args) {
 		
 		User u = new User();
-		u.setEmail("lamine@gmail.com");
+		u.setEmail("awacheikh@gmail.com");
 		u.setPassword("passer");
 		u.setNom("Ozil");
 		u.setPrenom("Basse");
 		
 		IUser userdao = new UserImpl();
-		int result = userdao.add(u);
-		System.out.println(result);
+		//int result = userdao.add(u);
+		//System.out.println(result);
 	}
 
 }
