@@ -1,5 +1,7 @@
 package application;
 
+import java.io.IOException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -10,6 +12,7 @@ import sn.isi.dao.IUser;
 import sn.isi.dao.UserImpl;
 import sn.isi.entities.User;
 import tools.Notification;
+import tools.Outils;
 
 public class MainController {
 	
@@ -20,12 +23,18 @@ public class MainController {
 	private IUser userdao = new UserImpl();
 	
 	
-	public void login(ActionEvent event) {
+	public void login(ActionEvent event) throws IOException {
 		String email = emailtxt.getText().toString();
 		String password = passwordtxt.getText().toString();
 		User user = userdao.login(email, password);
 		if (user != null) {
-			Notification.NotifSucces("Message", "Information correcte");
+			//Notification.NotifSucces("Message", "Information correcte");
+			if (user.getEmail().contains("awa")) {
+				Outils.load(event, "Administration", "/sn/isi/ui/Admin.fxml");
+			}
+			else {
+				
+			}
 		}
 		else {
 			Notification.NotifError("Message", "Email ou mot de passe incorrecte");

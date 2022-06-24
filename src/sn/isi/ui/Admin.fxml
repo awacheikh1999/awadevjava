@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="817.0" prefWidth="908.0" spacing="20.0" style="-fx-background-color: DARKCYAN;;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sn.isi.ui.AdminController">
+   <children>
+      <TextField fx:id="nomtxt" maxWidth="300.0" promptText="Nom" />
+      <TextField fx:id="prenomtxt" maxWidth="300.0" promptText="Prenom" />
+      <TextField fx:id="emailtxt" maxWidth="300.0" promptText="Email" />
+      <PasswordField fx:id="passwordtxt" maxWidth="300.0" promptText="Motdepasse" />
+      <Button fx:id="validerbt" mnemonicParsing="false" onAction="#insertion" style="-fx-background-color: white;" text="Ajouter" textFill="#2bbc98">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Button>
+      <TableView fx:id="usertable" prefHeight="337.0" prefWidth="712.0">
+        <columns>
+          <TableColumn fx:id="idColumn" prefWidth="96.0" text="Identifiant" />
+          <TableColumn fx:id="nomColumn" prefWidth="90.0" text="Nom" />
+            <TableColumn fx:id="prenomColumn" prefWidth="169.0" text="Prenom" />
+            <TableColumn fx:id="emailColumn" prefWidth="196.0" text="Email" />
+            <TableColumn fx:id="passwordColumn" prefWidth="256.0" text="Motdepasse" />
+        </columns>
+      </TableView>
+   </children>
+   	
+   	<!--  pour fixer au milieu de l'ecran -->
+   <padding>
+      <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+   </padding>
+   
+</VBox>
